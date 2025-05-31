@@ -33,7 +33,7 @@ const ArtisteSong = ({ song, handlePlay }) => {
 
 	const likeSong = async () => {
 		await client
-			.patch(`/songs/like/${song?._id}`, null, {
+			.patch(`${import.meta.env.VITE_API_URL}/api/songs/like/${song?._id}`, null, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},

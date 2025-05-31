@@ -45,7 +45,7 @@ const EditPlaylistPage = () => {
 	const fetchPlaylist = async () => {
 		setFetchPlaylistStatus({ loading: true, error: false });
 		await client
-			.get(`/playlists/${id}`)
+			.get(`${import.meta.env.VITE_API_URL}/api/playlists/${id}`)
 			.then((res) => {
 				setInputs({
 					playlistName: res.data.title,
@@ -65,7 +65,7 @@ const EditPlaylistPage = () => {
 			return { ...prev, error: false, loading: true };
 		});
 		await client
-			.get("/songs/random")
+			.get(`${import.meta.env.VITE_API_URL}/api/songs/random`)
 			.then((res) => {
 				setOtherSongs((prev) => {
 					return { ...prev, data: res.data, loading: false };
@@ -132,7 +132,7 @@ const EditPlaylistPage = () => {
 			songIds,
 		};
 		await client
-			.patch(`/playlists/${id}`, playlistDetails, {
+			.patch(`${import.meta.env.VITE_API_URL}/api/playlists/${id}`, playlistDetails, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 					"Content-Type": "application/json",

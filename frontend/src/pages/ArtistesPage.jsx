@@ -13,7 +13,7 @@ const ArtistesPage = () => {
 		setLoading(true);
 		setError(false);
 		await client
-			.get("/artistes/all")
+			.get(`${import.meta.env.VITE_API_URL}/api/artistes/all`)
 			.then((res) => {
 				setArtistes(res.data);
 				setLoading(false);

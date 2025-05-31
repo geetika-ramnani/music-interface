@@ -33,7 +33,7 @@ const PlaylistPage = () => {
 		setLoading(true);
 		setError(false);
 		await client
-			.get(`/playlists/${id}`)
+			.get(`${import.meta.env.VITE_API_URL}/api/playlists/${id}`)
 			.then((res) => {
 				setData(res.data);
 				setLoading(false);

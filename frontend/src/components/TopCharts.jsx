@@ -18,7 +18,7 @@ const TopCharts = () => {
 		setLoading(true);
 		setError(false);
 		await client
-			.get("/songs/top")
+			.get(`${import.meta.env.VITE_API_URL}/api/songs/top`)
 			.then((res) => {
 				setData(res.data);
 				setLoading(false);

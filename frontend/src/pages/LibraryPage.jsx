@@ -15,7 +15,7 @@ const LibraryPage = () => {
 	setLoading(true);
 	setError(false);
 	try {
-	  const response = await client.get("/songs", {
+	  const response = await client.get(`${import.meta.env.VITE_API_URL}/api/songs`, {
 		params: { searchTerm },
 	  });
   

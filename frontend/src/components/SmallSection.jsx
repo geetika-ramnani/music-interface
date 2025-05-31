@@ -14,7 +14,7 @@ const SmallSection = ({ title, endpoint }) => {
 		setError(false);
 		setLoading(true);
 		await client
-			.get(`${endpoint}`)
+			.get(`api${endpoint}`)
 			.then((res) => {
 				setData(res.data);
 				setLoading(false);

@@ -44,7 +44,7 @@ const CreatePlaylistPage = () => {
 		setFavoritesLoading(true);
 		setError({ ...error, favorites: false });
 		await client
-			.get("/users/favorites", {
+			.get(`${import.meta.env.VITE_API_URL}/api/users/favorites`, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},
@@ -63,7 +63,7 @@ const CreatePlaylistPage = () => {
 		setError({ ...error, otherSongs: false });
 		setOtherSongsLoading(true);
 		await client
-			.get("/songs/random")
+			.get(`${import.meta.env.VITE_API_URL}/api/songs/random`)
 			.then((res) => {
 				setOtherSongs(res.data);
 				setOtherSongsLoading(false);
@@ -88,7 +88,7 @@ const CreatePlaylistPage = () => {
 		};
 		setCreatePlLoading(true);
 		await client
-			.post("/playlists/create", playlistDetails, {
+			.post(`${import.meta.env.VITE_API_URL}/api/playlists/create`, playlistDetails, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 					"Content-Type": "application/json",

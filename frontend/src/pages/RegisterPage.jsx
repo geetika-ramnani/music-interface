@@ -42,7 +42,7 @@ const RegisterPage = () => {
 		if (validateFields()) {
 			setLoading(true);
 			await client
-				.post("/users/register", {
+				.post(`${import.meta.env.VITE_API_URL}/api/users/register`, {
 					username,
 					password,
 				})

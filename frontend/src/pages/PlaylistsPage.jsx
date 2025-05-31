@@ -15,7 +15,7 @@ const PlaylistsPage = () => {
 		setLoading(true);
 		setError(false);
 		await client
-			.get("/playlists")
+			.get(`${import.meta.env.VITE_API_URL}/api/playlists`)
 			.then((res) => {
 				setLoading(false);
 				setPlaylists(res.data);

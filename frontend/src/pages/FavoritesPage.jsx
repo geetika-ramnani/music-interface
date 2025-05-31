@@ -18,7 +18,7 @@ const FavoritesPage = () => {
 		setLoading(true);
 		setError(false);
 		await client
-			.get("/users/favorites", {
+			.get(`${import.meta.env.VITE_API_URL}/api/users/favorites`, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},

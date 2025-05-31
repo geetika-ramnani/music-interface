@@ -14,7 +14,7 @@ const Artistes = () => {
 		setLoading(true);
 		setError(false);
 		await client
-			.get("/artistes/top")
+			.get(`${import.meta.env.VITE_API_URL}/api/artistes/top`)
 			.then((res) => {
 				setArtistes(res.data);
 				setLoading(false);

@@ -168,7 +168,7 @@ const MusicPlayer = () => {
 
 	const likeSong = async () => {
 		await client
-			.patch(`/songs/like/${currentTrack?._id}`, null, {
+			.patch(`${import.meta.env.VITE_API_URL}/api/songs/like/${currentTrack?._id}`, null, {
 				headers: {
 					Authorization: `Bearer ${token}`,
 				},

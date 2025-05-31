@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const client = axios.create({
-	baseURL: "https://music-interface.onrender.com",
+	baseURL: import.meta.env.VITE_API_URL,
 });

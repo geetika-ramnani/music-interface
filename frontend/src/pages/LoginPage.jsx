@@ -42,7 +42,7 @@ const LoginPage = () => {
 		if (validateFields()) {
 			setLoading(true);
 			await client
-				.post("/users/login", {
+				.post(`${import.meta.env.VITE_API_URL}/api/users/login`, {
 					username,
 					password,
 				})

@@ -29,7 +29,7 @@ const ArtistePage = () => {
 		setLoading(true);
 		setError(false);
 		await client
-			.get(`/artistes/${id}`)
+			.get(`${import.meta.env.VITE_API_URL}/api/artistes/${id}`)
 			.then((res) => {
 				setArtiste(res.data);
 				setLoading(false);
