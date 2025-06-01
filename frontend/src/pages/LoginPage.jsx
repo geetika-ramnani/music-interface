@@ -41,7 +41,7 @@ const LoginPage = () => {
 	const handleLogin = async () => {
 		if (validateFields()) {
 			setLoading(true);
-			console.log("Login API URL:", `${import.meta.env.VITE_API_URL}/api/users/login`);
+			console.log("Login API URL:", import.meta.env.VITE_API_URL);
 			await client
 				.post(`${import.meta.env.VITE_API_URL}/api/users/login`, {
 					username,
