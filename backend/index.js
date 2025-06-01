@@ -6,12 +6,23 @@ import { songsRouter } from "./routes/songRoutes.js";
 import { userRouter } from "./routes/userRoutes.js";
 import { artisteRouter } from "./routes/artisteRoutes.js";
 import { playlistRouter } from "./routes/playlistRoutes.js";
+import cors from "cors";
+
+const allowedOrigins = [
+  "https://music-interface-indol.vercel.app",
+  "http://localhost:5173", 
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 
 connectDb();
 
