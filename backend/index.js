@@ -6,7 +6,6 @@ import { songsRouter } from "./routes/songRoutes.js";
 import { userRouter } from "./routes/userRoutes.js";
 import { artisteRouter } from "./routes/artisteRoutes.js";
 import { playlistRouter } from "./routes/playlistRoutes.js";
-import cors from "cors";
 
 const allowedOrigins = [
   "https://music-interface-indol.vercel.app",
