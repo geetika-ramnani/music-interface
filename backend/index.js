@@ -11,7 +11,6 @@ import { playlistRouter } from "./routes/playlistRoutes.js";
 dotenv.config();
 
 const app = express();
-app.use(express.json());
 
 const allowedOrigins = [
   "https://music-interface-indol.vercel.app",
@@ -22,6 +21,8 @@ app.use(cors({
   origin: allowedOrigins,
   credentials: true,
 }));
+
+app.use(express.json());
 
 connectDb();
 
