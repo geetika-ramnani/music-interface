@@ -70,7 +70,7 @@ const DesktopNav = () => {
 			top={0}
 			left={0}
 			zIndex={30}
-			minW={{ base: "full", md: "12rem", lg: "12rem", "2xl": "20rem" }}
+			minW={{ base: "full", md: "9rem", lg: "9rem", "2xl": "17rem" }}
 			minH={{ base: "5rem", md: "100vh" }}
 			borderRight="1px"
 			borderRightColor="zinc.600"
