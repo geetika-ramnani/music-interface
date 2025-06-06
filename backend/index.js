@@ -17,10 +17,16 @@ const allowedOrigins = [
   "http://localhost:5173", 
 ];
 
-app.use(cors({
+const corsOptions = {
   origin: allowedOrigins,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   credentials: true,
-}));
+};
+
+app.use(cors(corsOptions));
+
+// This is the missing part:
+app.options("*", cors(corsOptions)); // handles preflight requests
 
 app.use(express.json());
 
